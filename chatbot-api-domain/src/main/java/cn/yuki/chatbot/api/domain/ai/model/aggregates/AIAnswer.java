@@ -13,6 +13,10 @@ import java.util.List;
  * @Version 1.0
  */
 public class AIAnswer {
+    /**
+     * chatgpt
+     */
+
 //    private String id;
 //
 //    private String object;
@@ -53,6 +57,10 @@ public class AIAnswer {
 //    public List<Choices> getChoices(){
 //        return this.choices;
 //    }
+
+    /**
+     * 文心一言
+     */
     private String id;
 
     private String object;

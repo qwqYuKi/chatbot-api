@@ -9,6 +9,9 @@ package cn.yuki.chatbot.api.domain.ai.model.vo;
  * @Version 1.0
  */
 public class Choices {
+    /**
+     * chatgpt
+     */
 //    private String text;
 //    private int index;
 //    private String logprobs;
