@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.net.InetAddress;
 
 /**
  * @Author yuki
@@ -44,6 +45,10 @@ public class ZsxqApi implements IZsxqApi {
 
         get.addHeader("cookie", cookie);
         get.addHeader("Content-Type", "application/json;charset=utf8");
+
+        InetAddress localHost = InetAddress.getLocalHost();
+        String ipAddress = localHost.getHostAddress();
+        logger.info("当前IP地址: " + ipAddress);
 
         CloseableHttpResponse response = httpClient.execute(get);
         if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {

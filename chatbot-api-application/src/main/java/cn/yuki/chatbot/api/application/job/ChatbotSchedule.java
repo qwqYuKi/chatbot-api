@@ -42,7 +42,7 @@ public class ChatbotSchedule {
     @Resource
     private IOpenAI openAI;
 
-    @Scheduled(cron = "30 * * * * ?")
+    @Scheduled(cron = "0/30 * * * * ?")
     public void run(){
         try {
             //防止回答太规律被风控
@@ -54,7 +54,8 @@ public class ChatbotSchedule {
             GregorianCalendar calendar = new GregorianCalendar();
             int hour = calendar.get(Calendar.HOUR_OF_DAY);
             if(hour > 22 || hour < 7){
-                logger.info("打烊时间不工作，ai下班了");
+                logger.info("打烊时间不工作，ai下班了。请于7~22点来哦");
+                return;
             }
 
             //检索问题
